@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #121212;
+}
+
+header {
+    background: rgba(3, 0, 0, 0.384); /* Acrylic effect */
+    backdrop-filter: blur(2px); /* Blur effect for the acrylic background */
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    color: #3a9fd8;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 40px; /* Increased spacing */
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3a9fd8;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #3a9fd8;
+    transition: all 0.3s ease;
+}
+
+/* Sticky effect on scroll */
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+.hero {
+    height: 100vh;
+    background: url('imgs/casaleBG.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Second Fantasy-Themed Button */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    color: #ffffff; /* White text */
+    background: #3f78c4; /* Lighter blue background */
+    border-radius: 30px; /* Rounded corners */
+    border: 2px solid #1e3a5f; /* Deep blue border */
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle text shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Default shadow */
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: #1e3a5f; /* Deep blue on hover */
+    border-color: #3f78c4; /* Change border color on hover */
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+}
+
+/* Hover Animation: Glowing Edge */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(63, 120, 196, 0.3); /* Blueish glow */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1.2); /* Larger scale by default */
+    transition: all 0.5s ease-in-out;
+    opacity: 1; /* Full opacity by default */
+    z-index: -1;
+}
+
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(0.5); /* Scale down on hover */
+    opacity: 0; /* Hide glow on hover */
+}
+
+.section {
+    padding: 60px 20px;
+    background-color: #1e2a38;
+    color: #d4e1f5;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3a9fd8;
+}
+
+.section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #2a3b4c;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #3a9fd8;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-links a:hover {
+    color: #89b0ce;
+}
+
+/* Dialog Box Styles */
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Ensure it's on top */
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+
+
+/* Styles for the Rules Page */
+/* Background image for Rules Page */
+.rules-section {
+    background: url('imgs/casaleBG.jpg') no-repeat center center/cover;
+    color: #d4e1f5;
+    padding-top: 80px; /* Add padding to avoid collision with navbar */
+}
+
+.rules-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #3a9fd8;
+}
+
+.rules-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rules-list li {
+    background-color: rgba(42, 59, 76, 0.8); /* Slightly transparent background */
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.rules-list i {
+    font-size: 1.8rem;
+    color: #3a9fd8;
+    margin-right: 15px;
+}
+
+.rule-text {
+    font-size: 1.2rem;
+    color: #d4e1f5;
+}
+
+

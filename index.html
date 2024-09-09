@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MidgardSMP - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Optional: Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>MidgardSMP</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="rules.html">Rules</a></li>
+                <li><a href="https://discord.gg/796YJUqjM7">Join Now</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to MidgardSMP</h2>
+            <p>Join us on an epic journey across the mythical lands of Midgard. Fight, survive, and thrive in the ultimate Minecraft adventure!</p>
+            <a href="#" class="btn" id="join-btn">Copy IP</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About MidgardSMP</h2>
+            <p>MidgardSMP is a Minecraft server inspired by Medival Times. Engage in survival adventures, build your legacy, and protect the realm of Midgard from chaos. Our custom plugins and events will immerse you in a rich world filled with Medival Fantasy lore.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 MidgardSMP. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="fab fa-discord"></i> Discord</a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Dialog Box -->
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <span class="close-btn">&times;</span>
+            <p>IP Copied Enjoy!</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('join-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const ip = '168.138.186.205';
+            navigator.clipboard.writeText(ip).then(() => {
+                const dialog = document.getElementById('dialog');
+                dialog.style.display = 'flex'; // Show the dialog
+                setTimeout(() => {
+                    dialog.style.display = 'none'; // Hide the dialog after 3 seconds
+                }, 3000);
+            }).catch(err => console.error('Failed to copy text: ', err));
+        });
+
+        // Close dialog when clicking on close button
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('dialog').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
