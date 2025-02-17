@@ -65,7 +65,7 @@
     <script>
         document.getElementById('join-btn').addEventListener('click', function(e) {
             e.preventDefault();
-            const ip = '213.35.112.254';
+            const ip = '213.35.112.254:25567';
             navigator.clipboard.writeText(ip).then(() => {
                 const dialog = document.getElementById('dialog');
                 dialog.style.display = 'flex'; // Show the dialog
